@@ -17,7 +17,7 @@ class PaymentUpdateTest extends TestCase
                         'status' => 'accepted',
                         'transaction_id' => 123456,
                     ];
-            $payment = factory(\App\Payment::class)->update();
+            $payment = factory(\App\Payment::class)->create();
             $response = $this->actingAs($payment, 'api')->json('POST', '/api/update',$data);
             $response->assertStatus(200);
             $response->assertJson(['status' => true]);
