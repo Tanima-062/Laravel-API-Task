@@ -8,3 +8,5 @@
 3. chmod 777 storage/ -R
 4. chmod 777 bootstrap/cache -R
 5. php artisan key:generate
+6. php artisan db:seed
+
