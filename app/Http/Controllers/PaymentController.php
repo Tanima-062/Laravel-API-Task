@@ -33,7 +33,7 @@ class PaymentController extends Controller
     }
 
     public function update(Request $request){
-        Payment::update(['status'=>$request->status])->where(['transaction_id' => $request->transaction_id, 'user_id' => 1]);
+        Payment::where(['transaction_id' => $request->transaction_id, 'user_id' => 1])->update(['status'=>$request->status]);
          return response(['message' => 'Data has been updated successfully']);
     }
 }
